@@ -1,0 +1,7 @@
+// Funções
+
+// Converte 'px' em 'rem'
+@function convertToFont($value) {
+    $remValue: ($value / variables.$fz-default)+rem;
+    @return $remValue;
+}

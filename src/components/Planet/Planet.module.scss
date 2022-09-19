@@ -1,0 +1,26 @@
+// .group {
+//     // width: 500px;
+//     width: 100%;
+// }
+
+.subtitle {
+    position: relative;
+    // left: -70px;
+    font-size: 32px;
+    margin-bottom: 3rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.num::first-letter {
+    color: aqua;
+}
+
+.image {
+    display: block;
+    width: 445px;
+    height: 445px;
+    background-color: beige;
+}

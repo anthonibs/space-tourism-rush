@@ -1,0 +1,101 @@
+.division {
+    display: grid;
+    // align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    grid-template-columns: 450px 600px;
+}
+
+.container {
+    width: 100%;
+    color: aliceblue;
+}
+
+.list {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
+.list li {
+    display: block;
+    position: relative;
+    height: 100%;
+    // padding: .625rem;
+}
+
+.list li button {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+}
+
+.list li button::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    border-radius: 6px;
+    transition: all .3s ease-out;
+    transform: scale(0, 1);
+    transform-origin: center;
+}
+
+.list li button:hover::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    border-radius: 6px;
+    transition: all .3s ease-out;
+    transform: scale(1, 1);
+    transform-origin: center;
+}
+
+.group {
+    width: 420px;
+    margin: 2rem auto 0;
+}
+
+.nav {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 100px;
+    text-transform: uppercase;
+}
+
+.text {
+    font-size: 16px;
+    line-height: normal;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.flex {
+    display: flex;
+    gap: 3rem;
+}
+
+.control p {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#ativo {
+    background-color: blueviolet;
+}

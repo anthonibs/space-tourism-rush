@@ -1,0 +1,85 @@
+@use '../../scss/variables';
+@import '../../scss/functions';
+
+.background {
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../../public/assets/home/background-home-desktop.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: content;
+    position: relative;
+
+    .container {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 100px;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .group {
+        width: 50%;
+    }
+
+    .center {
+        width: 450px;
+        margin-left: 20%;
+    }
+
+    .title {
+        font-size: convertToFont(variables.$fz-h1);
+        font-family: variables.$f-2-family;
+        text-transform: uppercase;
+        color: variables.$color-txt-primary;
+    }
+
+    .subtitle {
+        font-size: convertToFont(variables.$fz-sub-1);
+        font-family: variables.$f-1-family;
+        text-transform: uppercase;
+        color: variables.$color-txt-secondary;
+    }
+
+    .text {
+        font-size: convertToFont(variables.$fz-default);
+        color: variables.$color-txt-secondary;
+        font-family: variables.$f-1-family;
+    }
+
+    .btn {
+        display: block;
+        position: relative;
+        font-size: convertToFont(variables.$fz-h5);
+        color: variables.$color-txt-third;
+        height: 274px;
+        width: 274px;
+        border-radius: 50%;
+        font-family: variables.$f-2-family;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        overflow: hidden;
+        margin: 0 15% 0 auto;
+        z-index: 10;
+        background-color: variables.$color-bg-primary;
+        transition: all .3s ease-out;
+
+        &:hover {
+            box-shadow: rgba(255, 255, 255, .2) 0px 0px 0px 70px;
+            transition: all .3s ease-in;
+        }
+
+        a {
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            line-height: 10;
+            width: 100%;
+            color: inherit;
+        }
+    }
+
+}
