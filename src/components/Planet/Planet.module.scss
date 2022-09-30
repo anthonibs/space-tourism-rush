@@ -1,26 +1,25 @@
-// .group {
-//     // width: 500px;
-//     width: 100%;
-// }
-
 .subtitle {
     position: relative;
-    // left: -70px;
+    left: -50px;
     font-size: 32px;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     font-family: 'Barlow Condensed', sans-serif;
     text-transform: uppercase;
+    letter-spacing: 3px;
     font-weight: 400;
     color: #FFFFFF;
+
+    span {
+        letter-spacing: 5px;
+        color: rgba(255, 255, 255, .3);
+        margin-right: 1rem;
+        font-weight: 600;
+    }
 }
 
-.num::first-letter {
-    color: aqua;
-}
 
 .image {
     display: block;
-    width: 445px;
-    height: 445px;
-    background-color: beige;
+    width: 100%;
+    height: auto;
 }

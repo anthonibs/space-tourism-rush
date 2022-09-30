@@ -1,11 +1,19 @@
 import { useEffect, useState } from 'react'
+import css from 'classnames'
 import Planet from '../Planet'
 import styles from './Info.module.scss'
 
 
-const Info = (props: any) => {
+const Info = () => {
     const [data, setData] = useState([])
-    const [planeta, setPlaneta] = useState([])
+    const [planeta, setPlaneta] = useState({
+        name: "moon",
+        description: 'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
+        png: '/assets/destination/image-moon.png',
+        distance: '384,400 KM',
+        travel: '3 days'
+    })
+
 
     useEffect(() => {
         loadData()
@@ -19,14 +27,14 @@ const Info = (props: any) => {
     }
 
     function select(planet: any) {
-        console.log("Planeta selecionado ", planet)
         setPlaneta(planet)
     }
 
 
+
     return (
         <div className={styles.division}>
-            <Planet image={planeta} num="01" title="Pick your destination" />
+            <Planet urlImagem={planeta} num="01" title="Pick your destination" />
 
             <div className={styles.group}>
                 <div className={styles.container}>
@@ -34,7 +42,11 @@ const Info = (props: any) => {
                         <ul className={styles.list}>
                             {data.map(e => (
                                 <li key={e.name}>
-                                    <button onClick={() => { select(e) }}>
+                                    <button className={css({
+                                        [styles.list__btn]: true,
+                                        [styles['list__btn--active']]: e.name === planeta.name ? true : false
+                                    })}
+                                        onClick={() => select(e)}>
                                         {e.name}
                                     </button>
                                 </li>
@@ -47,20 +59,19 @@ const Info = (props: any) => {
                     <p className={styles.text}>
                         {planeta.description}
                     </p>
-                    <hr />
+                    <hr className={styles['dividing-line']} />
                     <div className={styles.flex}>
                         <div className={styles.control}>
                             <p>avg. distance</p>
-                            <p>{planeta.distance}</p>
+                            <span>{planeta.distance}</span>
                         </div>
                         <div className={styles.control}>
                             <p>est. travel time</p>
-                            <p>{planeta.travel}</p>
+                            <span>{planeta.travel}</span>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div >
     )
 }
