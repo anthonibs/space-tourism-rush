@@ -1,12 +1,18 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import css from "classnames"
 import Layout from "../../components/Layout"
 import styles from './Crew.module.scss'
 
 const Crew = () => {
 
     const [crew, setCrew] = useState([])
-    const [person, setPerson] = useState({})
+    const [person, setPerson] = useState({
+        name: "Douglas Hurley",
+        png: "/assets/crew/image-douglas-hurley.png",
+        role: "Commander",
+        bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
+    })
 
     useEffect(() => {
         loadCrew()
@@ -17,23 +23,26 @@ const Crew = () => {
             const response: Response = await fetch('http://localhost:3050/crew')
             const dados = await response.json()
             setCrew(dados)
+
+            return dados
         } catch (error) {
-            console.log('Erro no servidor')
+            console.log(error)
         }
     }
 
-    function selection(e: []) {
+
+    function selection(e: string) {
         setPerson(e)
     }
 
 
     return (
         <Layout title="Crew" background={styles.background}>
-            <section className={styles.container}>
+            <section className={styles.container} id="message-error">
                 <div className={styles.layout}>
                     <aside className={styles.information}>
                         <div className={styles.information_wrap}>
-                            <h1 className={styles.title}><span className={styles.title_nro}>02</span>Meet your crew</h1>
+                            <h1 className={styles.title}><span>02</span>Meet your crew</h1>
                             <div>
                                 <h3 className={styles.titleProf}>{person.role}</h3>
                                 <h2 className={styles.name}>{person.name}</h2>
@@ -48,7 +57,11 @@ const Crew = () => {
                                     <div key={e.name}>
                                         <button
                                             onClick={() => selection(e)}
-                                            className={styles.btnSlider}>
+                                            className={css({
+                                                [styles.btnSlider]: true,
+                                                [styles['btnSlider--active']]: e.name === person.name ? true : false
+
+                                            })}>
                                         </button>
                                     </div>
                                 ))}
@@ -58,12 +71,12 @@ const Crew = () => {
 
                     <aside className={styles.profile}>
                         <div className={styles.profile_img}>
-                            <Image src="/assets/crew/image-douglas-hurley.webp" width={550} height={600} alt="" />
+                            <Image src={person.png} width={500} height={570} alt={person.name} />
                         </div>
                     </aside>
                 </div>
-            </section>
-        </Layout>
+            </section >
+        </Layout >
     )
 }
 

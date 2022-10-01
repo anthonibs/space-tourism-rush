@@ -18,7 +18,7 @@ const Header = (props: any) => {
                     <hr className={styles.line} />
                     <li className={classNames(
                         styles.navItem,
-                        styles.active
+                        // styles.active
                     )}>
                         <span>00</span>
                         <Link className={styles.link} href="/">home</Link>
