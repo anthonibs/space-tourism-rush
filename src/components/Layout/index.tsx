@@ -1,7 +1,5 @@
-import classNames from 'classnames'
-import Head from 'next/head'
-import Header from '../Header'
-import styles from './Layout.module.scss'
+import Head from 'next/head';
+import Header from '../Header';
 
 interface LayoutProps {
     title: string,

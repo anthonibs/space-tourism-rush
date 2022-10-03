@@ -1,14 +1,13 @@
-// @use '../scss/variables';
-// @import '../scss/functions';
+@use '../scss/variables';
+@import '../scss/functions';
 
 
-
-// .background {
-    // height: 100vh;
-    // width: 100%;
-    // background-image: url('../../public/assets/home/background-home-desktop.jpg');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // grid-area: content;
-// }
+.background {
+    background-image: url('../../public/assets/home/background-home-desktop.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: content;
+    height: 100vh;
+    width: 100%;
+}

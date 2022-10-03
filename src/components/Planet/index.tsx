@@ -7,7 +7,6 @@ interface planetProps {
 }
 
 const Planet = (props: planetProps) => {
-
     return (
         <div className={styles.container}>
             <div className={styles.group}>
@@ -15,7 +14,6 @@ const Planet = (props: planetProps) => {
                 <img className={styles.image} src={props.urlImagem.png} alt="Planeta" />
             </div>
         </div>
-
     )
 }
 

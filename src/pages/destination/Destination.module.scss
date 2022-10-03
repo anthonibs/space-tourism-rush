@@ -1,20 +1,39 @@
-.background {
-    height: 100vh;
-    width: 100%;
-    background-image: url('../../../public/assets/destination/background-destination-desktop.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    grid-area: content;
+@media (min-width: 375px) {
+    .background {
+        background-image: url('../../../public/assets/destination/background-destination-mobile.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        grid-area: content;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .section {
+        padding-top: 120px;
+    }
+
 }
 
-.section {
-    padding-top: 250px;
-}   
+@media (min-width: 768px) {
+    .background {
+        background-image: url('../../../public/assets/destination/background-destination-tablet.jpg');
 
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+    }
+
+    .section {
+        padding-top: 160px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .background {
+        background-image: url('../../../public/assets/destination/background-destination-desktop.jpg');
+    }
+
+    .section {
+        padding-top: 250px;
+    }
+
 }

@@ -1,74 +1,170 @@
-@use '../../scss/variables';
+@import '../../scss/variables';
 
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 150px;
-    z-index: 100;
-    grid-area: headers;
+@media (min-width: 375px) and (max-width: 768px) {
+    .header {
+        grid-area: headers;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 100;
 
-    .nav {
-        height: 100%;
-        display: grid;
-        align-items: center;
-        grid-template-columns: 40px 1fr 1fr;
-        padding: 0 0 0 4rem;
-        position: relative;
-    }
+        .nav {
+            align-items: flex-start;
+            display: grid;
+            grid-template-columns: 40px 1fr 1fr;
+            height: 100vh;
+            padding: 0 0 0 2rem;
+            position: fixed;
 
-    .line {
-        position: absolute;
-        margin-left: auto;
-        right: 95%;
-        height: 2px;
-        width: 92%;
-        border: none;
-        background-color: rgba(255, 255, 255, .1);
-    }
-
-    .navList {
-        position: relative;
-        border-radius: .325rem;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 3rem;
-        line-height: 80px;
-        height: 80px;
-        gap: 1.5rem;
-        background-color: rgba(255, 255, 255, .04);
-        backdrop-filter: blur(4px);
-    }
-
-    .navItem {
-        position: relative;
-        display: flex;
-        gap: .325rem;
-        height: 100%;
-        text-transform: uppercase;
-        color: variables.$color-txt-primary;
-        font-family: variables.$f-1-family;
-        font-size: variables.$fz-default;
-        font-weight: bold;
-        letter-spacing: 2px;
-
-        a {
-            color: inherit;
-            font-size: inherit;
-            font-weight: 400;
-            text-decoration: none;
+            &__logo {
+                margin-top: 2rem;
+            }
         }
 
-        &:hover {
+        .navList {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, .04);
+            display: none;
+            height: 100%;
+            line-height: 1.5;
+            padding: 8rem 0rem;
+            position: fixed;
+            right: 0;
+            width: 45%;
+        }
+
+        .navList--active {
+            display: block;
+        }
+
+        .navItem {
+            color: $color-txt-primary;
+            display: flex;
+            font-family: $f-1-family;
+            font-size: $fz-default;
+            font-weight: bold;
+            gap: .325rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            position: relative;
+            text-transform: uppercase;
+
+            a {
+                color: inherit;
+                font-size: inherit;
+                font-weight: 400;
+                text-decoration: none;
+            }
+
+            &:hover::after {
+                background-color: $color-bg-primary;
+                content: '';
+                cursor: pointer;
+                display: block;
+                height: 100%;
+                position: absolute;
+                right: 0px;
+                width: 4px;
+            }
+
+        }
+
+        .menu__hamburger {
             cursor: pointer;
-            transition: border-bottom .2s ease-in-out;
-            border-bottom: 3px solid rgba(255, 255, 255, .3);
+            display: block;
+            position: fixed;
+            padding: .325rem;
+            right: 35px;
+            top: 35px;
+            z-index: 1000;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        grid-area: headers;
+        height: 150px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+
+        .nav {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 40px 1fr 1fr;
+            height: 100%;
+            padding: 0 0 0 4rem;
+            position: relative;
         }
 
-        &.active {
-            border-bottom: 3px solid variables.$color-bg-primary;
+        .line {
+            display: none;
         }
 
+        .navList {
+            align-items: center;
+            border-radius: .325rem;
+            backdrop-filter: blur(4px);
+            background-color: rgba(255, 255, 255, .04);
+            display: flex;
+            gap: 1.5rem;
+            height: 80px;
+            justify-content: space-around;
+            line-height: 80px;
+            position: relative;
+            padding: 0 3rem;
+        }
+
+        .navItem {
+            color: $color-txt-primary;
+            display: flex;
+            gap: .325rem;
+            height: 100%;
+            font-family: $f-1-family;
+            font-size: $fz-default;
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: relative;
+            text-transform: uppercase;
+            transition: all .2s ease-in-out;
+
+            a {
+                color: inherit;
+                font-size: inherit;
+                font-weight: 400;
+                text-decoration: none;
+            }
+
+            &:hover {
+                border-bottom: 3px solid rgba(255, 255, 255, .3);
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+            }
+
+        }
+
+        .menu__hamburger {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .header {
+
+            .line {
+                border: none;
+                background-color: rgba(255, 255, 255, .1);
+                display: block;
+                height: 2px;
+                margin-left: auto;
+                position: absolute;
+                right: 95%;
+                width: 92%;
+            }
+        }
     }
 }

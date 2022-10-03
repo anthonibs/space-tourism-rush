@@ -1,25 +1,100 @@
-.subtitle {
-    position: relative;
-    left: -50px;
-    font-size: 32px;
-    margin-bottom: 6rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 400;
-    color: #FFFFFF;
+@import '../../scss/variables';
 
-    span {
-        letter-spacing: 5px;
-        color: rgba(255, 255, 255, .3);
-        margin-right: 1rem;
-        font-weight: 600;
+@media (min-width: 375px) {
+    .subtitle {
+        color: $color-txt-primary;
+        font-family: $f-1-family;
+        font-style: normal;
+        font-weight: 400;
+        font-size: $fz-default;
+        line-height: $line-h3;
+        letter-spacing: 2.7px;
+        margin-bottom: 2rem;
+        position: relative;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            color: inherit;
+            font-family: $f-3-family;
+            font-weight: 900;
+            font-size: $fz-default;
+            line-height: $line-h3;
+            letter-spacing: 2.7px;
+            opacity: 0.25;
+        }
+    }
+
+    .image {
+        display: block;
+        height: 170px;
+        margin: 0 auto;
+        width: 170px;
     }
 }
 
 
-.image {
-    display: block;
-    width: 100%;
-    height: auto;
+@media (min-width: 768px) {
+    .subtitle {
+        color: $color-txt-primary;
+        font-family: $f-1-family;
+        font-weight: 400;
+        font-size: $fz-default;
+        line-height: $line-h3;
+        letter-spacing: 2.7px;
+        margin-bottom: 60px;
+        position: relative;
+        text-align: left;
+        text-transform: uppercase;
+
+        span {
+            color: inherit;
+            font-family: $f-3-family;
+            font-weight: 900;
+            font-size: $fz-default;
+            line-height: $line-h3;
+            letter-spacing: 2.7px;
+            opacity: 0.25;
+        }
+    }
+
+    .image {
+        display: block;
+        height: 300px;
+        margin: 0 auto;
+        width: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .subtitle {
+        color: $color-txt-primary;
+        font-family: $f-1-family;
+        font-weight: 400;
+        font-size: $fz-h5;
+        line-height: $line-h6;
+        letter-spacing: 4.725px;
+        margin-bottom: 92px;
+        position: relative;
+        text-align: left;
+        text-transform: uppercase;
+
+
+        span {
+            color: inherit;
+            font-family: $f-3-family;
+            font-weight: 900;
+            font-size: $fz-h5;
+            line-height: $line-h6;
+            letter-spacing: 4.725px;
+            opacity: 0.25;
+        }
+    }
+
+    .image {
+        display: block;
+        height: 445px;
+        margin: 0 auto;
+        width: 445px;
+    }
 }

@@ -1,85 +1,198 @@
-@use '../../scss/variables';
+@import '../../scss/variables';
 @import '../../scss/functions';
 
-.background {
-    height: 100vh;
-    width: 100%;
-    background-image: url('../../../public/assets/home/background-home-desktop.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    grid-area: content;
-    position: relative;
-
-    .container {
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 100px;
-        width: 100%;
-        gap: 1rem;
-    }
-
-    .group {
-        width: 50%;
-    }
-
-    .center {
-        width: 450px;
-        margin-left: 20%;
-    }
-
-    .title {
-        font-size: convertToFont(variables.$fz-h1);
-        font-family: variables.$f-2-family;
-        text-transform: uppercase;
-        color: variables.$color-txt-primary;
-    }
-
-    .subtitle {
-        font-size: convertToFont(variables.$fz-sub-1);
-        font-family: variables.$f-1-family;
-        text-transform: uppercase;
-        color: variables.$color-txt-secondary;
-    }
-
-    .text {
-        font-size: convertToFont(variables.$fz-default);
-        color: variables.$color-txt-secondary;
-        font-family: variables.$f-1-family;
-    }
-
-    .btn {
-        display: block;
+@media (min-width: 375px) {
+    .background {
+        background-image: url('../../../public/assets/home/background-home-mobile.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        grid-area: content;
+        height: 100vh;
         position: relative;
-        font-size: convertToFont(variables.$fz-h5);
-        color: variables.$color-txt-third;
-        height: 274px;
-        width: 274px;
-        border-radius: 50%;
-        font-family: variables.$f-2-family;
-        text-transform: uppercase;
-        cursor: pointer;
-        border: none;
-        overflow: hidden;
-        margin: 0 15% 0 auto;
-        z-index: 10;
-        background-color: variables.$color-bg-primary;
-        transition: all .3s ease-out;
+        width: 100%;
 
-        &:hover {
-            box-shadow: rgba(255, 255, 255, .2) 0px 0px 0px 70px;
-            transition: all .3s ease-in;
-        }
-
-        a {
-            display: block;
-            height: 100%;
-            text-decoration: none;
-            line-height: 10;
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            position: relative;
+            padding: 0 2.5rem;
+            top: 150px;
             width: 100%;
-            color: inherit;
         }
+
+        .group {
+            text-align: center;
+            width: 100%;
+        }
+
+
+        .title {
+            color: $color-txt-primary;
+            font-size: $fz-h6;
+            font-family: $f-2-family;
+            line-height: $line-h9;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: $color-txt-secondary;
+            font-size: $fz-default;
+            line-height: $line-h3;
+            letter-spacing: 2.7px;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .text {
+            color: $color-txt-secondary;
+            font-family: $f-3-family;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $fz-default;
+            line-height: $line-h4;
+            text-align: center;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn {
+            background-color: $color-bg-primary;
+            border-radius: 50%;
+            border: none;
+            color: $color-bg-third;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            font-family: $f-2-family;
+            font-weight: 400;
+            font-size: $fz-sub-2;
+            height: 150px;
+            line-height: $line-h4;
+            letter-spacing: 1.25px;
+            margin: 0 auto;
+            overflow: hidden;
+            text-transform: uppercase;
+            transition: all .3s ease-out;
+            width: 150px;
+            z-index: 10;
+
+            &:hover {
+                box-shadow: rgba(255, 255, 255, .2) 0px 0px 0px 40px;
+                transition: all .3s ease-in;
+            }
+
+            a {
+                align-items: center;
+                color: inherit;
+                display: flex;
+                height: 100%;
+                justify-content: center;
+                text-decoration: none;
+            }
+        }
+
     }
 
+}
+
+@media (min-width: 768px) {
+    .background {
+        background-image: url('../../../public/assets/home/background-home-tablet.jpg');
+
+        .container {
+            bottom: 0;
+            gap: 1rem;
+            justify-content: space-evenly;
+            position: absolute;
+        }
+
+        .center {
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+
+            .title {
+                font-size: $fz-h1;
+                line-height: $line-h10;
+            }
+
+            .subtitle {
+                font-size: $fz-sub-2;
+                line-height: $line-h3;
+                letter-spacing: 3.375px;
+            }
+
+            .text {
+                font-size: $fz-default;
+                line-height: $line-h5;
+                text-align: center;
+            }
+        }
+
+        .btn {
+            background-color: $color-bg-primary;
+            font-size: $fz-h4;
+            height: 242px;
+            letter-spacing: 2px;
+            width: 242px;
+
+            &:hover {
+                box-shadow: rgba(255, 255, 255, .2) 0px 0px 0px 50px;
+            }
+        }
+
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .background {
+        background-image: url('../../../public/assets/home/background-home-desktop.jpg');
+
+        .container {
+            flex-direction: row;
+            margin-bottom: 126px;
+            top: auto;
+        }
+
+        .center {
+            margin: 0 0 0 20%;
+
+            .title {
+                line-height: 172px;
+            }
+
+            .subtitle {
+                font-size: $fz-sub-1;
+                line-height: $line-h6;
+                letter-spacing: 4.725px;
+                text-align: left;
+            }
+
+            .text {
+                font-size: $fz-body;
+                line-height: $line-h8;
+                text-align: left;
+            }
+        }
+
+        .btn {
+            bottom: 0;
+            color: $color-txt-third;
+            font-size: $fz-h5;
+            height: 274px;
+            position: absolute;
+            right: 150px;
+            width: 274px;
+
+            &:hover {
+                box-shadow: rgba(255, 255, 255, .2) 0px 0px 0px 70px;
+            }
+
+        }
+
+    }
 }

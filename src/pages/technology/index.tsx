@@ -63,7 +63,7 @@ const Technology = () => {
                     </aside>
 
                     <aside className={styles.control__img}>
-                        <img src={technology.images.portrait} />
+                        <img src={technology.images.landscape} />
                     </aside>
                 </div>
             </section>

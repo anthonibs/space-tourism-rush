@@ -2,6 +2,7 @@
 
 // Importação fontes google fonts
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 // Cor da fonte
 $color-txt-primary: #FFFFFF;
@@ -20,13 +21,29 @@ $fz-h3: 56px;
 $fz-h4: 32px;
 $fz-h5: 28px;
 
+$fz-h6: 80px;
+
 // Tamanho de fonte
-$fz-sub-1: 28px;
-$fz-sub-2: 16px;
+$fz-sub-1: 24px;
+$fz-sub-2: 20px;
 $fz-sub-3: 14px;
 
 $fz-default: 16px;
+$fz-body: 18px;
 
 // Família da letra
 $f-1-family: 'Barlow Condensed', sans-serif;
 $f-2-family: 'Bellefair', serif;
+$f-3-family: 'Barlow', sans-serif;
+
+// Espaçamento da Fonte
+$line-h1: 18px;
+$line-h2: 17px;
+$line-h3: 19px;
+$line-h4: 25px;
+$line-h5: 28px;
+$line-h6: 34px;
+$line-h7: 64px;
+$line-h8: 32px;
+$line-h9: 100px;
+$line-h10: 150px;

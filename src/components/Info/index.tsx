@@ -7,11 +7,11 @@ import styles from './Info.module.scss'
 const Info = () => {
     const [data, setData] = useState([])
     const [planeta, setPlaneta] = useState({
-        name: "moon",
-        description: 'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
-        png: '/assets/destination/image-moon.png',
-        distance: '384,400 KM',
-        travel: '3 days'
+        name: "Moon",
+        png: "/assets/destination/image-moon.png",
+        description: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+        distance: "384,400 km",
+        travel: "3 days"
     })
 
 
@@ -29,8 +29,6 @@ const Info = () => {
     function select(planet: any) {
         setPlaneta(planet)
     }
-
-
 
     return (
         <div className={styles.division}>
@@ -59,7 +57,9 @@ const Info = () => {
                     <p className={styles.text}>
                         {planeta.description}
                     </p>
-                    <hr className={styles['dividing-line']} />
+
+                    <div className={styles['dividing-line']}></div>
+
                     <div className={styles.flex}>
                         <div className={styles.control}>
                             <p>avg. distance</p>

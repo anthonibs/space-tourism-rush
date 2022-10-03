@@ -40,9 +40,12 @@ const Crew = () => {
         <Layout title="Crew" background={styles.background}>
             <section className={styles.container} id="message-error">
                 <div className={styles.layout}>
+                    <h1 className={styles.title}>
+                        <span>02</span>
+                        Meet your crew
+                    </h1>
                     <aside className={styles.information}>
                         <div className={styles.information_wrap}>
-                            <h1 className={styles.title}><span>02</span>Meet your crew</h1>
                             <div>
                                 <h3 className={styles.titleProf}>{person.role}</h3>
                                 <h2 className={styles.name}>{person.name}</h2>
@@ -71,7 +74,8 @@ const Crew = () => {
 
                     <aside className={styles.profile}>
                         <div className={styles.profile_img}>
-                            <Image src={person.png} width={500} height={570} alt={person.name} />
+                            <img src={person.png} alt={person.name} />
+                            <div className={styles.line}></div>
                         </div>
                     </aside>
                 </div>
