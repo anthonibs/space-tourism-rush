@@ -13,7 +13,6 @@
             align-items: flex-start;
             display: grid;
             grid-template-columns: 40px 1fr 1fr;
-            height: 100vh;
             padding: 0 0 0 2rem;
             position: fixed;
 
@@ -31,7 +30,8 @@
             padding: 8rem 0rem;
             position: fixed;
             right: 0;
-            width: 45%;
+            width: 100%;
+            max-width: 220px;
         }
 
         .navList--active {
