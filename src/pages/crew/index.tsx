@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import css from "classnames"
 import Layout from "../../components/Layout"
 import styles from './Crew.module.scss'
+import database from '../../backend/data.json'
 
 const Crew = () => {
 
@@ -14,20 +15,21 @@ const Crew = () => {
     })
 
     useEffect(() => {
-        loadCrew()
+        // loadCrew()
+        setCrew(database.crew)
     }, [])
 
-    const loadCrew = async () => {
-        try {
-            const response: Response = await fetch('http://localhost:3050/crew')
-            const dados = await response.json()
-            setCrew(dados)
+    // const loadCrew = async () => {
+    //     try {
+    //         const response: Response = await fetch('http://localhost:3050/crew')
+    //         const dados = await response.json()
+    //         setCrew(dados)
 
-            return dados
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    //         return dados
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
 
     function selection(select: any) {

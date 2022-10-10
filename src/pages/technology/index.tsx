@@ -2,12 +2,13 @@ import { useEffect, useState } from "react"
 import Layout from "../../components/Layout"
 import styles from './Technology.module.scss'
 import css from 'classnames';
-
+import database from '../../backend/data.json'
 
 const Technology = () => {
 
     useEffect(() => {
-        loadTechnology()
+        // loadTechnology()
+        setData(database.technology)
     }, [])
 
     const [data, setData] = useState<any[]>([])
@@ -22,12 +23,12 @@ const Technology = () => {
 
 
 
-    async function loadTechnology() {
-        const response = await fetch('http://localhost:3050/technology')
-        const data = await response.json()
+    // async function loadTechnology() {
+    //     const response = await fetch('http://localhost:3050/technology')
+    //     const data = await response.json()
 
-        return setData(data)
-    }
+    //     return setData(data)
+    // }
 
 
     return (
