@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import css from 'classnames'
 import Planet from '../Planet'
 import styles from './Info.module.scss'
+import database from '../../backend/data.json';
 
 
 const Info = () => {
@@ -16,15 +17,16 @@ const Info = () => {
 
 
     useEffect(() => {
-        loadData()
+        // loadData()
+        setData(database.destinations)
     }, [])
 
 
-    const loadData = async () => {
-        const response: Response = await fetch('http://localhost:3050/destinations')
-        const dados = await response.json()
-        setData(dados)
-    }
+    // const loadData = async () => {
+    //     const response: Response = await fetch('http://localhost:3050/destinations')
+    //     const dados = await response.json()
+    //     setData(dados)
+    // }
 
     function select(planet: any) {
         setPlaneta(planet)
