@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { useEffect, useState } from "react"
 import css from "classnames"
 import Layout from "../../components/Layout"
@@ -6,7 +5,7 @@ import styles from './Crew.module.scss'
 
 const Crew = () => {
 
-    const [crew, setCrew] = useState([])
+    const [crew, setCrew] = useState<any[]>([])
     const [person, setPerson] = useState({
         name: "Douglas Hurley",
         png: "/assets/crew/image-douglas-hurley.png",
@@ -31,8 +30,8 @@ const Crew = () => {
     }
 
 
-    function selection(e: string) {
-        setPerson(e)
+    function selection(select: any) {
+        setPerson(select)
     }
 
 

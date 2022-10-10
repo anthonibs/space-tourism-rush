@@ -5,7 +5,7 @@ import styles from './Info.module.scss'
 
 
 const Info = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState<any[]>([])
     const [planeta, setPlaneta] = useState({
         name: "Moon",
         png: "/assets/destination/image-moon.png",

@@ -10,7 +10,7 @@ const Technology = () => {
         loadTechnology()
     }, [])
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState<any[]>([])
     const [technology, setTechnology] = useState({
         name: "Launch vehicle",
         images: {
